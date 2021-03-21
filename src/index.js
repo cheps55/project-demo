@@ -7,13 +7,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from './components/Home';
-import Detail from './components/Detail';
+import ProjectInfo from './components/ProjectInfo';
+import Manage from './components/Manage';
 
 ReactDOM.render(
   <BrowserRouter>
       <Switch>
           <Route exact={true} path="/" component={Home}/>
-          <Route exact={true} path="/detail" component={Detail}/>
+          <Route exact={true} path="/projectInfo" component={ProjectInfo}/>
+          <Route exact={true} path="/manage" component={Manage}/>
       </Switch>
   </BrowserRouter>
   

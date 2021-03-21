@@ -54,3 +54,17 @@
 .carousel .carousel-indicators > li .active {
     background-color: black;
 }
+
+/* Manage Storage*/
+#storage_control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#file_control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

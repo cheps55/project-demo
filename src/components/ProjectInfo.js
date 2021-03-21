@@ -6,7 +6,7 @@ import "../css/general.css";
 import {Container, Carousel} from 'react-bootstrap/';
 import NavigationBar from "./NavigationBar";
 
-class Detail extends Component {
+class ProjectInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,7 +46,6 @@ class Detail extends Component {
         var storageRef = firebase.storage().ref(this.selected_project);
         storageRef.listAll().then(res => {
             res.items.forEach(item => {
-                
                 // Set file type
                 let file_type = "image";
                 if(item.name.includes("mp4")) { file_type = "video"; }
@@ -78,7 +77,6 @@ class Detail extends Component {
 
   render() {
     return (
-      <div key="root">
         <Container key="body">
             <NavigationBar />
             <Carousel key="carousel" className="m-auto" onSelect={this.ResetVideo.bind(this)}> 
@@ -100,7 +98,7 @@ class Detail extends Component {
                             } else {
                                 return (
                                     <Carousel.Item key={item.name}>  
-                                        <img src={item.url} alt="image" />
+                                        <img src={item.url} alt={item.name} />
                                         <Carousel.Caption>
                                             {this.formatFileName(item.name)}
                                         </Carousel.Caption>
@@ -111,9 +109,8 @@ class Detail extends Component {
                 }
             </Carousel>
         </Container>
-      </div>
     );
   }
 }
 
-export default Detail
+export default ProjectInfo
