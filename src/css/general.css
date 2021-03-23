@@ -55,6 +55,13 @@
     background-color: black;
 }
 
+/* Login Form */
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Manage Storage*/
 #storage_control {
     width: 100%;
