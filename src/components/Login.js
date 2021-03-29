@@ -3,7 +3,7 @@ import "../css/general.css";
 // connection with firebase
 import firebase from "../config/config.js";
 
-import {Container, Form, Button} from 'react-bootstrap/';
+import {Container, Form, Button, InputGroup} from 'react-bootstrap/';
 
 class Login extends Component {
     constructor(props) {
@@ -50,22 +50,21 @@ class Login extends Component {
     render() {
         return (
             <Container key="login" id="login">
-                <Form onSubmit={this.validateLogin.bind(this)}>
+                <Form id="login_form" className="rounded mb-0 border border-dark" onSubmit={this.validateLogin.bind(this)}>
+                    <p className="h4 text-center py-4">Login</p>
                     <Form.Group controlId="formUsername">
-                        <Form.Label>Username</Form.Label>
                         <Form.Control 
-                            type="email" placeholder="Enter username" 
+                            type="email" placeholder="Username" 
                             onChange={this.handleUsernameChange.bind(this)}
                         />
                     </Form.Group>
                     <Form.Group controlId="formPassword">
-                        <Form.Label>Password</Form.Label>
                         <Form.Control 
                             type="password" placeholder="Password" 
                             onChange={this.handlePasswordChange.bind(this)}
                         />
                     </Form.Group>
-                    <Button variant="primary" type="submit">Submit</Button>
+                    <Button variant="primary" type="submit">Login</Button>
                 </Form>
             </Container>
         );

@@ -217,16 +217,16 @@ class StorageTable extends Component {
             <Container key="storage_list" className="storage_list"> 
                 <Container key="storage_control" id="storage_control">
                     {
-                        (this.state.display_file) &&
+                        (this.state.display_file) && false &&
                         <Button variant="danger" onClick={this.deleteItem.bind(this)}>Delete</Button>
                     }
                     {
                         this.state.display_info &&
-                        <Button onClick={this.updateInfo.bind(this)}>Update</Button>
+                        <Button variant="success" onClick={this.updateInfo.bind(this)}>Update</Button>
                     }
                     {
                         (this.state.display_info || this.state.display_file) &&
-                        <Button onClick={this.refreshPage.bind(this)}>Back</Button>
+                        <Button variant="primary" onClick={this.refreshPage.bind(this)}>Back</Button>
                     }
                 </Container>
                 <Table striped bordered hover variant="dark">
@@ -256,7 +256,9 @@ class StorageTable extends Component {
                             <tr><td>Title</td><td><Form.Control id={this.state.list[0].id+"_title"} as="textarea" onChange={this.textareaOnChange.bind(this)} value={this.state.list[0].title}></Form.Control></td></tr>
                             <tr><td>Visible</td><td><input id={this.state.list[0].id} type="checkbox" onChange={this.checkboxOnChange.bind(this)} checked={this.state.list[0].checked} /></td></tr>
                             <tr><td>Description</td><td><Form.Control id={this.state.list[0].id+"_description"} as="textarea"  onChange={this.textareaOnChange.bind(this)} value={this.state.list[0].description}></Form.Control></td></tr>
-                            <tr><td colSpan="2"><Button id={this.state.list[0].id} onClick={this.getStorageFile.bind(this)}>View Directory File</Button></td></tr>
+                            <tr><td colSpan="2" style={{textAlign:"center"}}>
+                                <Button variant="info" id={this.state.list[0].id} onClick={this.getStorageFile.bind(this)}>View Directory File</Button>
+                            </td></tr>
                         </tbody>
                     }
                     <tbody>

@@ -62,6 +62,12 @@
     align-items: center;
 }
 
+#login_form {
+    text-align: center;
+    margin: 5px;
+    padding: 5%;
+}
+
 /* Manage Storage*/
 #storage_control {
     width: 100%;
